@@ -17,12 +17,12 @@ end
 # { directorOne => allTheMoneyTheyMade, ... }
 def directors_totals(nds)
   result = {}
-  director_data.length.times do |a|
+  nds.length.times do |a|
     sum = 0
-    director_data[a][:movies].length.times do |b|
-      sum = sum + director_data[a][:movies][b][:worldwide_gross]
+    nds[a][:movies].length.times do |b|
+      sum = sum + nds[a][:movies][b][:worldwide_gross]
     end
-    result[director_data[a][:name]] = sum
+    result[nds[a][:name]] = sum
   end   
   result
 end
