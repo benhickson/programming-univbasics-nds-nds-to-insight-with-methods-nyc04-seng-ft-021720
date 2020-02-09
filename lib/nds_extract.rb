@@ -5,11 +5,9 @@ require 'directors_database'
 # using director_data as input
 def gross_for_director(director_data)
   sum = 0
-  director_data.length.times do |a|
-    director_data[a][:movies].length.times do |b|
-      sum = sum + director_data[a][:movies][b][:worldwide_gross]
-    end
-  end 
+  director_data[:movies].length.times do |b|
+    sum = sum + director_data[:movies][b][:worldwide_gross]
+  end
   sum
 end
 
